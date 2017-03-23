@@ -14,20 +14,18 @@ function reducer(state = INITIAL_STATE, action) {
   switch(action.type) {
     case SEARCH:
       if (action.fetching) {
-          return {
-              ...state,
-              whether: [],
-              fetching: true,
-              term: action.term
-          }
+        return Object.assign({}, state, {
+          whether: {},
+          fetching: true,
+          term: action.term
+        })
       }
 
-      return {
-          ...state,
-          whether: action.payload,
-          fetching: false,
-          term: action.term
-      };
+      return Object.assign({}, state, {
+        whether: action.payload,
+        fetching: false,
+        term: action.term
+      });
     default:
       return state;
   }
