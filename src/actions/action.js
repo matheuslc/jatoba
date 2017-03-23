@@ -23,7 +23,7 @@ export const search = (term = 'Florianópolis') => {
         return request.then((response) => dispatch({
             type: SEARCH,
             fetching: false,
-            payload: response,
+            payload: response.data,
             error: false,
             term
         })).catch((error) => dispatch({
