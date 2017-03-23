@@ -24,9 +24,8 @@ function reducer(state = INITIAL_STATE, action) {
 
       return {
           ...state,
-          whether: action.payload.data,
+          whether: action.payload,
           fetching: false,
-          totalItems: action.payload.data.totalItems,
           term: action.term
       };
     default:
