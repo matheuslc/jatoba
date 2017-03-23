@@ -11,29 +11,31 @@ const INITIAL_STATE = { whether: [] };
  * @returns {Object} New state
  */
 function reducer(state = INITIAL_STATE, action) {
-    switch(action.type) {
-        case SEARCH:
-            if (action.fetching) {
-                return {
-                    ...state,
-                    whether: [],
-                    fetching: true,
-                    term: action.term
-                }
-            }
+  switch(action.type) {
+    case SEARCH:
+      if (action.fetching) {
+          return {
+              ...state,
+              whether: [],
+              fetching: true,
+              term: action.term
+          }
+      }
 
-            return {
-                ...state,
-                whether: action.payload.data,
-                fetching: false,
-                totalItems: action.payload.data.totalItems,
-                term: action.term
-            };
-    }
+      return {
+          ...state,
+          whether: action.payload.data,
+          fetching: false,
+          totalItems: action.payload.data.totalItems,
+          term: action.term
+      };
+    default:
+      return state;
+  }
 }
 
 const rootReducer = combineReducers({
-    whether: reducer,
+  whether: reducer,
 });
 
 export default rootReducer;
