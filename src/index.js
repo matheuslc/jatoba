@@ -7,6 +7,8 @@ import reducers from './reducers/reducer';
 import routes from './routes';
 import thunk from 'redux-thunk';
 
+require('../styles/styles.scss');
+
 const createStoreWithMiddleware = applyMiddleware(
     thunk
 )(createStore);
@@ -18,3 +20,4 @@ ReactDOM.render(
         <Router history={browserHistory} routes={routes} />
     </Provider>
     , document.querySelector('.root'));
+

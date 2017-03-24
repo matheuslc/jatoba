@@ -1,2 +1,51 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~bootstrap/dist/css/bootstrap-grid.css';
+
 @import '_variables';
 
+html {
+  font-size: 10px;
+  background: #000;
+}
+
+.root {
+  background: #000;
+}
+
+.whether-search {
+  padding-top: 24px;
+  color: #FFF !important;
+  max-width: 600px;
+}
+
+.search__text {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.whether {
+  margin-top: 60px;
+
+  &__main-info {
+    width: 50%;
+    max-width: 50px;
+  }
+
+  &__info {
+    width: 50%
+  }
+
+  &__info-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  &__details {
+    margin-top: 16px;
+  }
+
+  &__image {
+    font-size: 2rem;
+    text-align: center;
+  }
+}

@@ -26,12 +26,14 @@ export const search = (term = 'Florianópolis') => {
             payload: response.data,
             error: false,
             term
-        })).catch((error) => dispatch({
+        })).catch((error) => {
+          return dispatch({
             type: SEARCH,
             fetching: false,
             payload: error,
             error: true,
             term
-        }))
+          })
+        });
     }
 }

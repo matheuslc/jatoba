@@ -17,7 +17,7 @@ function reducer(state = INITIAL_STATE, action) {
         return Object.assign({}, state, {
           whether: {},
           fetching: true,
-          error: false,
+          error: action.error,
           term: action.term
         })
       }
@@ -25,7 +25,7 @@ function reducer(state = INITIAL_STATE, action) {
       return Object.assign({}, state, {
         whether: action.payload,
         fetching: false,
-        error: false,
+        error: action.error,
         term: action.term
       });
     default:

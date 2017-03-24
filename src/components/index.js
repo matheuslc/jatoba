@@ -13,7 +13,7 @@ export default class Index extends Component {
 
   render() {
     return (
-        <div className="container-fluid">
+        <div className="container-fluid whether-search col-xs-6">
           <Search />
 
             { this.props.children }
