@@ -9,7 +9,7 @@ const URL = 'http://api.openweathermap.org/data/2.5/weather';
 const API_KEY = '4743eefc9dd1e3fc255f055299c0620d';
 
 export const search = (term = 'Florianópolis') => {
-    const request = axios.get(`${URL}?q=${term}&appid=${API_KEY}`);
+    const request = axios.get(`${URL}?q=${window.encodeURI(term)}&appid=${API_KEY}`);
 
     return dispatch => {
         dispatch({

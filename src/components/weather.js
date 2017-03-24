@@ -38,12 +38,12 @@ class Weather extends Component {
   }
 
   render() {
-    console.log('aa', this.props);
-
     if (this.props.error === true) {
       return (
         <div className="weather container justify-content-md-center">
-          { this.props.weather.response.data.message }
+          <div className="row">
+            { this.props.weather.response.data.message }
+          </div>
         </div>
       )
     }
