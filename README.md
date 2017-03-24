@@ -9,6 +9,7 @@
 ## Running
 * npm install
 * npm start
+* Access: ://localhost:8080
 
 ## Building
 * npm install

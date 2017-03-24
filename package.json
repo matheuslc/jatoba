@@ -39,6 +39,7 @@
   "dependencies": {
     "axios": "^0.15.3",
     "babel-preset-stage-1": "^6.1.18",
+    "bootstrap": "^4.0.0-alpha.6",
     "css-loader": "^0.26.4",
     "file-loader": "^0.10.1",
     "flexboxgrid": "^6.3.1",
