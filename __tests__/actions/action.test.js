@@ -27,7 +27,9 @@ describe('Redux actions', () => {
   });
 
   it('Should search and dispatch two SEARCH actions', () => {
-    mock.onGet(`${URL}?q=Florianópolis&appid=${API_KEY}`)
+    const encodedURl = encodeURI('Florianópolis');
+
+    mock.onGet(`${URL}?q=${encodedURl}&appid=${API_KEY}`)
       .reply(200, weatherResponse);
 
     const store = mockStore({
