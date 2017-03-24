@@ -1,7 +1,7 @@
 {
   "name": "jatoba",
   "version": "1.0.0",
-  "description": "Whether search application",
+  "description": "Weather search application",
   "main": "index.js",
   "repository": "git@github.com:matheuslc/jatoba.git",
   "scripts": {

@@ -16,10 +16,10 @@ const API_KEY = '4743eefc9dd1e3fc255f055299c0620d';
 
 describe('Redux actions', () => {
   let mock = {};
-  let whetherResponse = {};
+  let weatherResponse = {};
 
   beforeAll(() => {
-    whetherResponse = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../fixtures/whetherResponse.json'), 'utf8'));
+    weatherResponse = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../fixtures/weatherResponse.json'), 'utf8'));
   });
 
   beforeEach(() => {
@@ -28,10 +28,10 @@ describe('Redux actions', () => {
 
   it('Should search and dispatch two SEARCH actions', () => {
     mock.onGet(`${URL}?q=Florianópolis&appid=${API_KEY}`)
-      .reply(200, whetherResponse);
+      .reply(200, weatherResponse);
 
     const store = mockStore({
-      whether: []
+      weather: []
     });
 
     return store.dispatch(actions.search('Florianópolis'))
@@ -53,7 +53,7 @@ describe('Redux actions', () => {
         expect(storeActions[1]).to.have.property('error');
         expect(storeActions[1]).to.have.property('term');
         expect(storeActions[1].fetching).to.equal(false);
-        expect(storeActions[1].payload).to.equal(whetherResponse);
+        expect(storeActions[1].payload).to.equal(weatherResponse);
         expect(storeActions[1].type).to.equal(actions.SEARCH);
       });
   });

@@ -3,7 +3,7 @@ import axios from 'axios';
 export const SEARCH = 'SEARCH';
 
 /**
- * Open Whether API
+ * Open weather API
  */
 const URL = 'http://api.openweathermap.org/data/2.5/weather';
 const API_KEY = '4743eefc9dd1e3fc255f055299c0620d';

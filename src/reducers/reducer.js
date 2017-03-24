@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 
 import { SEARCH } from '../actions/action';
 
-const INITIAL_STATE = { whether: [] };
+const INITIAL_STATE = { weather: [] };
 
 /**
  * @name reducer
@@ -15,7 +15,7 @@ function reducer(state = INITIAL_STATE, action) {
     case SEARCH:
       if (action.fetching) {
         return Object.assign({}, state, {
-          whether: {},
+          weather: {},
           fetching: true,
           error: action.error,
           term: action.term
@@ -23,7 +23,7 @@ function reducer(state = INITIAL_STATE, action) {
       }
 
       return Object.assign({}, state, {
-        whether: action.payload,
+        weather: action.payload,
         fetching: false,
         error: action.error,
         term: action.term
@@ -34,7 +34,7 @@ function reducer(state = INITIAL_STATE, action) {
 }
 
 const rootReducer = combineReducers({
-  whether: reducer,
+  weather: reducer,
 });
 
 export default rootReducer;

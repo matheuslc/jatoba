@@ -7,16 +7,16 @@ import reducer from '../../src/reducers/reducer';
 import * as actions from '../../src/actions/action'
 
 describe('Redux reducers', () => {
-  let whetherResponse = {};
+  let weatherResponse = {};
 
   beforeAll(() => {
-    whetherResponse = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../fixtures/whetherResponse.json'), 'utf8'));
+    weatherResponse = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../fixtures/weatherResponse.json'), 'utf8'));
   });
 
   it('Should return the initial state', () => {
     expect(reducer(undefined, {})).to.deep.equal({
-      whether: {
-        whether: [],
+      weather: {
+        weather: [],
       }
     })
   });
@@ -24,13 +24,13 @@ describe('Redux reducers', () => {
   it('Should handle SEARCH action', () => {
     expect(reducer({}, {
       type: actions.SEARCH,
-      payload: whetherResponse,
+      payload: weatherResponse,
       term: 'Florianópolis',
       fetching: false,
       error: false,
     })).to.be.deep.equal({
-      whether: {
-        whether: whetherResponse,
+      weather: {
+        weather: weatherResponse,
         fetching: false,
         error: false,
         term: 'Florianópolis'
