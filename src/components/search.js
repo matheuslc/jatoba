@@ -20,7 +20,7 @@ class Search extends Component {
     render() {
         return (
             <nav className="search container justify-content-md-center">
-                <div className="row">
+                <form className="row">
                     <h1 className="search__text">Type your city name</h1>
                     <div className="input-group input-group-lg">
                         <input className="form-control"
@@ -31,12 +31,16 @@ class Search extends Component {
                                }) } />
                         <span className="input-group-btn">
                           <button className="btn btn-secondary"
-                                  onClick={() => this.search(this.state.query)}>
+                                  type="submit"
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    this.search(this.state.query)
+                                  }}>
                             Search
                           </button>
                         </span>
                     </div>
-                </div>
+                </form>
             </nav>
         )
     }
